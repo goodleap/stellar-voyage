@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#07090f">
+  <title>星辰大海 · 从宇宙到地球</title>
+  <meta name="description" content="跨越七个尺度，从可观测宇宙、银河系与太阳系，一路回到我们的蓝色家园。开启一场中文互动宇宙探索。">
+  <meta property="og:title" content="星辰大海 · 从宇宙到地球"><meta property="og:description" content="从浩瀚，到我们。一场跨越七个尺度的宇宙之旅。"><meta property="og:type" content="website"><meta property="og:url" content="https://stellar-voyage.calmlarch4.chatgpt.site"><meta property="og:image" content="https://stellar-voyage.calmlarch4.chatgpt.site/assets/galaxy.webp">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css"><link rel="preload" href="assets/galaxy.webp" as="image">
+  <script src="app.js" type="module"></script>
+</head>
+<body>
+<a class="skip" href="#journey">跳转到尺度之旅</a>
+<div class="reading-progress" aria-hidden="true"><span id="reading-progress"></span></div>
+<header class="header">
+  <a href="#home" class="brand" aria-label="星辰大海首页"><img src="favicon.svg" width="35" height="35" alt=""><span>星辰大海<small>A COSMIC JOURNEY</small></span></a>
+  <nav aria-label="主导航"><a href="#journey">尺度之旅</a><a href="#solar">太阳系图鉴</a><a href="#earth">蓝色家园</a></nav>
+  <button id="motion-toggle" class="motion-toggle" aria-pressed="false" title="暂停背景动效"><span class="motion-icon" aria-hidden="true">Ⅱ</span><span class="motion-label">暂停动效</span></button>
+</header>
+<main>
+  <section class="hero" id="home" aria-labelledby="hero-title">
+    <div class="hero-art" aria-hidden="true"><img src="assets/galaxy.webp" alt="" fetchpriority="high" width="2400" height="1370"></div>
+    <canvas id="starfield" aria-hidden="true"></canvas>
+    <div class="hero-ring ring-one" aria-hidden="true"></div><div class="hero-ring ring-two" aria-hidden="true"></div>
+    <div class="hero-content wrap">
+      <div class="eyebrow"><span class="gold-dot"></span> 从可观测宇宙，抵达地球 <span class="eyebrow-line"></span></div>
+      <h1 id="hero-title">从浩瀚，<br>到<span class="serif">我们。</span></h1>
+      <p class="hero-english">A universe to explore. A place to call home.</p>
+      <p class="hero-description">越过星系的海洋，穿行恒星之间。<br>用七个尺度，重新认识我们在宇宙中的位置。</p>
+      <a class="button primary" href="#journey">开启宇宙之旅 <span aria-hidden="true">↗</span></a>
+      <a class="hero-secondary" href="#solar">先去太阳系看看 <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="image-label"><span class="crosshair" aria-hidden="true">+</span><div>NGC 1300<small>棒旋星系 · 哈勃望远镜实拍</small></div></div>
+    <div class="hero-footer wrap">
+      <a class="scroll-hint" href="#journey"><span aria-hidden="true">↓</span> 向下探索 <i></i></a>
+      <div class="hero-stats"><div><strong>920<span> 亿光年</span></strong><small>可观测宇宙直径 · 约</small></div><div><strong>07<span> 个尺度</span></strong><small>从宇宙到我们的家园</small></div><div><strong>01<span> 颗地球</span></strong><small>目前唯一已知有生命的星球</small></div></div>
+    </div>
+  </section>
+  <section class="journey section wrap" id="journey" aria-labelledby="journey-heading">
+    <div class="section-heading"><div><p class="eyebrow"><span>01 /</span> THE JOURNEY OF SCALE</p><h2 id="journey-heading">无限辽阔，层层靠近。</h2></div><p>宇宙有多大？<br>从最大的视野，找到最熟悉的坐标。</p></div>
+    <div class="journey-navigation" id="stage-nav" role="group" aria-label="选择探索尺度"></div>
+    <div class="explorer">
+      <div class="scene-wrap"><div class="scene-top"><span><span class="live-dot"></span> COSMIC ATLAS</span><span id="scene-index">01 / 07</span></div><canvas id="scene" role="img" aria-label="可观测宇宙结构艺术示意"></canvas><div class="scene-marker" id="scene-marker">每一点微光，都可能是一座星系。</div><div class="scene-bottom"><span id="scene-scale">尺度约 10¹¹ 光年</span><span>结构示意 · 非真实比例</span></div></div>
+      <article class="stage-detail" aria-live="polite" aria-atomic="true"><p class="eyebrow" id="stage-en"></p><h3 id="stage-title"></h3><div class="stage-measure"><strong id="stage-size"></strong><span id="stage-unit"></span><small id="stage-size-label"></small></div><p class="stage-description" id="stage-description"></p><div class="fact-note"><span class="tiny-star" aria-hidden="true">✧</span><p id="stage-note"></p></div><a id="stage-source" class="text-link" href="https://www.nasa.gov/" target="_blank" rel="noopener noreferrer">阅读科学来源 <span aria-hidden="true">↗</span></a></article>
+    </div>
+    <div class="journey-controls"><div class="stage-arrows"><button id="prev-stage" class="icon-button" aria-label="前一个尺度">←</button><button id="next-stage" class="icon-button" aria-label="下一个尺度">→</button><span id="journey-location">当前位置：可观测宇宙</span></div><button id="autoplay" class="play-button" aria-pressed="false"><span aria-hidden="true">▷</span> 自动漫游</button></div>
+    <label class="range-label" for="scale-range"><span>遥远宇宙</span><span>拖动，切换探索层级</span><span>我们的地球</span></label><input type="range" min="0" max="6" step="1" value="0" id="scale-range" aria-label="探索层级（非线性尺度）" aria-valuetext="可观测宇宙，第一站，共七站">
+  </section>
+  <section class="interlude wrap" aria-label="认识光年"><div class="interlude-symbol" aria-hidden="true">✦</div><div><p class="eyebrow">A LITTLE PERSPECTIVE</p><p>我们望向远方，也在<span>望向过去。</span></p></div><p class="interlude-note">光年是距离单位。<br>一光年，是光在真空中一年走过的距离，<br>约 <strong>9.46 万亿千米</strong>。</p></section>
+  <section class="solar section wrap" id="solar" aria-labelledby="solar-heading">
+    <div class="section-heading"><div><p class="eyebrow"><span>02 /</span> OUR SOLAR NEIGHBOURHOOD</p><h2 id="solar-heading">一颗恒星，八个世界。</h2></div><p>离开银河的远景，走近太阳的邻居。<br>点击行星，发现各不相同的世界。</p></div>
+    <div class="solar-overview"><span class="sun-fragment" aria-hidden="true"></span><div><strong>太阳</strong><span>太阳系唯一的恒星</span></div><p>约 46 亿年前，一团气体与尘埃在引力作用下汇聚，<br>太阳和它的行星家族，由此诞生。</p><span class="solar-caption">行星外观为艺术示意<br>大小与间距未按比例</span></div>
+    <div id="planet-nav" class="planet-nav" role="group" aria-label="选择太阳系行星"></div>
+    <article class="planet-detail" aria-live="polite" aria-atomic="true"><div class="planet-identity"><span class="planet-order" id="planet-order">03</span><div><p id="planet-en" class="eyebrow">EARTH</p><h3 id="planet-name">地球</h3><span class="planet-type" id="planet-type">类地行星</span></div></div><div class="planet-copy"><p id="planet-description"></p><a id="planet-source" class="text-link" target="_blank" rel="noopener noreferrer" href="https://science.nasa.gov/earth/facts/">探索这颗行星 ↗</a></div><dl class="planet-facts"><div><dt>赤道直径</dt><dd id="planet-diameter"></dd></div><div><dt>距太阳平均距离 · 约</dt><dd id="planet-distance"></dd></div><div><dt>公转周期 · 约</dt><dd id="planet-period"></dd></div></dl></article>
+    <div class="solar-footnote"><span>1 AU ≈ 1.496 亿千米，即地球到太阳的平均距离。</span><a href="https://science.nasa.gov/solar-system/kuiper-belt/facts/" target="_blank" rel="noopener noreferrer">海王星之外，还有柯伊伯带与更遥远的世界 ↗</a></div>
+  </section>
+  <section class="light-lab wrap" aria-labelledby="light-heading"><div class="light-copy"><p class="eyebrow"><span>LIGHT TRAVEL /</span> 光的时钟</p><h2 id="light-heading">此刻看到的，是多久以前？</h2><p>选择一个天体，看看它的光抵达地球需要多久。</p><label for="light-target" class="sr-only">选择光的出发地</label><select id="light-target"><option value="moon">月球 → 地球</option><option value="sun" selected>太阳 → 地球</option><option value="andromeda">仙女座星系 → 地球</option></select></div><div class="light-result"><div class="light-path" aria-hidden="true"><span class="light-start"></span><i></i><span class="light-end"></span></div><div id="light-time" aria-live="polite">8 <small>分</small> 19 <small>秒</small></div><p id="light-note">当你看到阳光，看到的是约 8 分钟前的太阳。</p></div></section>
+  <section class="earth-section" id="earth" aria-labelledby="earth-heading"><div class="earth-halo" aria-hidden="true"></div><div class="wrap earth-layout"><div class="earth-visual"><img src="assets/earth.webp" alt="NASA 蓝色弹珠合成影像：蓝色海洋、白色云层与美洲大陆" loading="lazy" width="1100" height="1100"><span class="earth-coordinate">SOLAR SYSTEM / PLANET 03</span><span class="earth-image-credit">Blue Marble · NASA Earth Observatory · 合成影像</span></div><div class="earth-copy"><p class="eyebrow"><span>03 /</span> THE PALE BLUE HOME</p><h2 id="earth-heading">穿过星辰大海，<br>我们回到<span>地球。</span></h2><p>在浩瀚的宇宙里，这颗被海洋与云层包裹的岩石行星，是我们目前唯一已知拥有生命的世界。</p><p>山川、潮汐、每一次呼吸，以及所有关于远方的想象，都从这里开始。</p><dl class="earth-facts"><div><dt>赤道直径</dt><dd>12,756 <small>km</small></dd></div><div><dt>表面被海洋覆盖 · 约</dt><dd>71 <small>%</small></dd></div><div><dt>天然卫星</dt><dd>1 <small>颗</small></dd></div></dl><a href="#journey" id="return-journey" class="button outline">再看一次，我们的位置 <span aria-hidden="true">↗</span></a></div></div></section>
+  <section class="questions wrap section" aria-labelledby="questions-heading"><div><p class="eyebrow"><span>KEEP WONDERING /</span> 保持好奇</p><h2 id="questions-heading">再多问一个为什么。</h2><p>一些让宇宙更容易理解的小问题。</p></div><div class="accordions"><details><summary>宇宙约 138 亿岁，为什么可观测直径约 920 亿光年？<span aria-hidden="true">+</span></summary><p>因为光传播的同时，空间本身也在膨胀。那些很久以前发出光的区域，如今已远得多。约 920 亿光年描述的是可观测范围在今天的直径；138 亿年描述的是宇宙年龄，两者不是同一个量。不同宇宙学参数会带来略有差异的估计。</p></details><details><summary>可观测宇宙的边界，就是宇宙的尽头吗？<span aria-hidden="true">+</span></summary><p>不是。它由宇宙年龄、光的传播以及膨胀历史决定，表示信息能到达我们的范围。可观测范围之外可能还有更广阔的宇宙；整个宇宙有多大、是否无限，目前没有确定答案。</p></details><details><summary>星系、恒星、行星，分别是什么？<span aria-hidden="true">+</span></summary><p>星系是由引力联系在一起的大型系统，包含大量恒星、气体、尘埃和暗物质，银河系就是一个例子。太阳是一颗恒星，内部核聚变让它发光发热。地球是一颗绕太阳运行的行星，月球则是绕地球运行的天然卫星。</p></details><details><summary>为什么这些天体不能直接画在同一张真实比例图里？<span aria-hidden="true">+</span></summary><p>尺度差异太大。如果把地球画成直径 1 厘米的小球，太阳约在 117 米外，直径约 1.09 米；月球则在约 30 厘米外。本页按层级切换视野，结构图及行星陈列均不表示真实大小、距离或当前轨道位置。</p></details></div></section>
+  <section class="sources wrap" id="sources"><details><summary><span>科学来源与影像致谢</span><span>NASA / ESA / Hubble <i aria-hidden="true">↗</i></span></summary><div class="source-content"><p>本页为科普导览，数值作合理取整；不同尺度使用的“直径”“轨道跨度”“中心间距”已分别标注。探索顺序不代表各层结构都具有刚性边界或整体引力束缚。</p><div class="source-links"><a href="https://www.nasa.gov/science-research/astrophysics/how-big-is-space-we-asked-a-nasa-expert-episode-61/" target="_blank" rel="noopener noreferrer">01　可观测宇宙与光年 ↗</a><a href="https://science.nasa.gov/universe/galaxies/large-scale-structures/" target="_blank" rel="noopener noreferrer">02　宇宙大尺度结构 ↗</a><a href="https://science.nasa.gov/image-article/apod-2014-september-10-laniakea-our-home-supercluster-of-galaxies/" target="_blank" rel="noopener noreferrer">03　拉尼亚凯亚超星系团 ↗</a><a href="https://imagine.gsfc.nasa.gov/features/cosmic/local_group_info.html" target="_blank" rel="noopener noreferrer">04　本星系群 ↗</a><a href="https://science.nasa.gov/universe/galaxies/" target="_blank" rel="noopener noreferrer">05　星系与银河系 ↗</a><a href="https://science.nasa.gov/solar-system/solar-system-facts/" target="_blank" rel="noopener noreferrer">06　太阳系 ↗</a><a href="https://nssdc.gsfc.nasa.gov/planetary/factsheet/" target="_blank" rel="noopener noreferrer">07　行星数据表 ↗</a><a href="https://science.nasa.gov/moon/facts/" target="_blank" rel="noopener noreferrer">08　月球 ↗</a><a href="https://science.nasa.gov/earth/facts/" target="_blank" rel="noopener noreferrer">09　我们的地球 ↗</a></div><p>首页影像：NGC 1300，Credit: NASA, ESA, and The Hubble Heritage Team (STScI/AURA)。这是一座与银河系形态相似的棒旋星系，并非银河系的外部照片。<a href="https://esahubble.org/images/opo0501a/" target="_blank" rel="noopener noreferrer">影像原始来源 ↗</a></p><p>地球影像：Blue Marble 2002，NASA Earth Observatory；由卫星观测数据拼接而成的合成影像。<a href="https://science.nasa.gov/resource/blue-marble-2002/" target="_blank" rel="noopener noreferrer">影像原始来源 ↗</a></p><p>结构动画与行星外观为原创科普示意，并非观测数据可视化。资料核对：2026 年 10 月。</p></div></details></section>
+</main>
+<footer class="footer wrap"><a class="brand" href="#home"><img src="favicon.svg" width="30" height="30" alt=""><span>星辰大海</span></a><p>保持渺小，也保持仰望。</p><a class="back-top" href="#home">回到星空 ↑</a></footer>
+<noscript><div class="noscript">开启 JavaScript，即可体验尺度切换与行星图鉴。你仍可阅读本页的宇宙、地球介绍和科学来源。</div></noscript>
+</body></html>
